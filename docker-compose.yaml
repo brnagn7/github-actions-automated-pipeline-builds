@@ -1,0 +1,7 @@
+services:
+
+  # nginx - run docker compose up
+  web:
+      image: nginx:latest
+      ports:
+        - "80:80"
