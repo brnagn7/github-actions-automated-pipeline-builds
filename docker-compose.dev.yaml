@@ -2,8 +2,7 @@ services:
 
   # nginx - run docker compose up
   web:
-      build:
-        dockerfile: ./nginx/Dockerfile
+      image: nginx:latest
       ports:
         - "80:80"
       volumes:
@@ -12,11 +11,14 @@ services:
   app:
       build:
           dockerfile: ./php/Dockerfile
-
+      volumes:
+        - ./app:/var/www/html
   db:
       image: mysql:latest
       volumes:
         - mysqldata:/var/lib/mysql
+      ports:
+        - "4306:3306"
       restart: unless-stopped
       environment:
         MYSQL_ROOT_PASSWORD: toor
