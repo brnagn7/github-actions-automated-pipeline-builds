@@ -19,5 +19,5 @@ $soapObject2 = new Product();
 $soapObject2->price = 650;
 
 $priceAsCurrency = $soapObject2->priceAsCurrency();
-var_dump($priceAsCurrency) . PHP_EOL;
+creating - classes.phpvar_dump($priceAsCurrency).PHP_EOL;
 
